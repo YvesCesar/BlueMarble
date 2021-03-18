@@ -1,0 +1,3 @@
+/home/yves/Documentos/BlueMarble/build/CMakeFiles/rebuild_cache.dir
+/home/yves/Documentos/BlueMarble/build/CMakeFiles/BlueMarble.dir
+/home/yves/Documentos/BlueMarble/build/CMakeFiles/edit_cache.dir

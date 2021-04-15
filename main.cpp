@@ -36,9 +36,16 @@ int main()
     std::cout << "OpenGL Version   : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLSL Version     : " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 
+    // Definir a cor de fundo 
+    glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+
     // Entra no loop de eventos da aplicação
     while (!glfwWindowShouldClose(window))
     {
+        // glClear vai limpar o framebuffer. GL_COLOR_BUFFER_BIT limpa o buffer de cor. Depois de limpar, vai preencher com a cor que foi configurada no glClearColor
+        // Quando formos desenhar geometrias 3D, vamos voltar ao glClear porque teremos que limpar o buffer de profundidade (depth buffer)
+        glClear(GL_COLOR_BUFFER_BIT);
+
         // glfwPollEvents() Processa todos os eventos na fila de eventos do GLFW
         // Esses eventos podem ser do teclado, mouse, gamepad
         glfwPollEvents();

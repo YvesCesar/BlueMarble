@@ -18,3 +18,6 @@ else()
                                            OpenGL::OpenGL)
 endif()
 
+add_executable(Vectors Vectors.cpp)
+target_include_directories(Vectors PRIVATE deps/glm)
+

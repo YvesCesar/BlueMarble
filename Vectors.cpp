@@ -1,5 +1,6 @@
 #include <iostream>
 
+#define GLM_FORCE_SWIZZLE 
 #include <glm/glm.hpp>
 #include <glm/gtx/string_cast.hpp>
 
@@ -27,8 +28,32 @@ void Constructors()
     std::cout << "Point7: " << glm::to_string(Point7) << std::endl;  
 }
 
+void Components() {
+    std::cout << std::endl;
+
+    glm::vec4 P{ 1, 2, 3, 4 };
+    std::cout << " X:" << P.x << " Y:" << P.y << " Z:" << P.z << std::endl;
+    std::cout << " R:" << P.r << " G:" << P.g << " B:" << P.b << std::endl;
+    std::cout << " 0:" << P[0] << " 1:" << P[1] << " 2:" << P[2] << std::endl;
+}
+
+void Swizzle() {
+    std::cout << std::endl;
+
+    glm::vec4 P{ 1, 2, 3, 4 };
+
+    glm::vec3 Q = P.xxx();
+    glm::vec3 R = P.xyx();
+    glm::vec4 T = P.xyzw();
+    glm::vec4 Y = P.xzzw();
+
+    std::cout << glm::to_string(Y) << std::endl;
+}
+
 int main() {
     
     Constructors();
+    Components();
+    Swizzle();
     return 0;
 }

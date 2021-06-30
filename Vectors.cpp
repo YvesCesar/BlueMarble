@@ -28,6 +28,37 @@ void Constructors()
     std::cout << "Point7: " << glm::to_string(Point7) << std::endl;  
 }
 
+void Operations() {
+    std::cout << std::endl;
+
+    glm::vec3 P0{ 10.0f, 10.0f, 0.0f };
+    glm::vec3 P1{ 10.0f, 10.0f, 10.0f };
+
+    glm::vec3 R;
+
+    // Soma
+    R = P0 + P1;
+    std::cout << glm::to_string(R) << std::endl;
+
+    // Subtração
+    R = P0 - P1;
+    std::cout << glm::to_string(R) << std::endl;
+
+    // Scala (Aplica * 5.0f em todos os componentes)
+    R = P0 * 5.0f;
+    std::cout << glm::to_string(R) << std::endl;
+
+    R = P0 / 5.0f;
+    std::cout << glm::to_string(R) << std::endl;
+
+    // Multiplicação e divisão
+    R = P0 * P1;
+    std::cout << glm::to_string(R) << std::endl;
+
+    R = P0 / P1;
+    std::cout << glm::to_string(R) << std::endl;
+}
+
 void Components() {
     std::cout << std::endl;
 
@@ -55,5 +86,6 @@ int main() {
     Constructors();
     Components();
     Swizzle();
+    Operations();
     return 0;
 }

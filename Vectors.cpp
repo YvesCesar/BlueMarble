@@ -57,6 +57,40 @@ void Operations() {
 
     R = P0 / P1;
     std::cout << glm::to_string(R) << std::endl;
+
+    // Comprimento do vetor
+    float L = glm::length(P0);
+    std::cout << L << std::endl;
+
+    // Não confundir comprimento do vetor com o retorno do número de componentes de um vetor(Abaixo):
+    std::cout << P0.length() << std::endl;
+
+    // Normalizar um vetor( Transforma o vetor em um vetor de comprimento 1 )
+    glm::vec3 Norm = glm::normalize(P0); // dividirá 10.0f pelo comprimento do vetor e retorna um vetor de comprimento 1
+    std::cout << glm::to_string(Norm) << std::endl;
+    std::cout << glm::length(Norm) << std::endl;
+
+    // Produto Escalar ( Dot Product )
+    // O produto escalar entre 2 veores unitários, retornará o cosseno do ângulo entre esses dois vetores
+    float Dot = glm::dot(P0, P1);
+    std::cout << Dot << std::endl;
+
+    // Produto Vetorial ( Cross Product ), o comprimento desse vetor Cross será a área definida pelo paralelogramo que P0 e P1 definem
+    glm::vec3 Cross = glm::cross(P0, P1);
+    std::cout << glm::to_string(Cross) << std::endl;
+    std::cout << glm::length(Cross) << std::endl;
+
+    // Distância entre 2 pontos
+    float Distance = glm::distance(P0, P1);
+    std::cout << Distance << std::endl;
+
+    // Refração
+    glm::vec3 Refract = glm::refract(P0, Norm, 1.0f);
+    std::cout << glm::to_string(Refract) << std::endl;
+
+    // Reflexão
+    glm::vec3 Reflect = glm::reflect(P0, Norm);
+    std::cout << glm::to_string(Reflect) << std::endl;
 }
 
 void Components() {

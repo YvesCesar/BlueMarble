@@ -44,9 +44,34 @@ void TranslationMatrix()
     std::cout << glm::to_string(Direction) << std::endl;
 }
 
+void ScaleMatrix()
+{
+    std::cout << std::endl;
+    std::cout << "====================" << std::endl;
+    std::cout << " Scale Matrix " << std::endl;
+    std::cout << "====================" << std::endl;
+
+    glm::mat4 I = glm::identity<glm::mat4>();
+    glm::vec3 ScaleAmount{ 2, 2, 2 };
+    glm::mat4 Scale = glm::scale(I, ScaleAmount);
+
+    PrintMatrix(Scale);
+
+    glm::vec4 Position{ 100, 100, 0, 1 };
+    glm::vec4 Direction{ 100, 100, 0, 0 };
+
+    Position = Scale * Position;
+    Direction = Scale * Direction;
+
+    std::cout << std::endl;
+    std::cout << glm::to_string(Position) << std::endl;
+    std::cout << glm::to_string(Direction) << std::endl;
+}
+
 int main() 
 {
     TranslationMatrix();
+    ScaleMatrix();
 
     return 0;
 }
